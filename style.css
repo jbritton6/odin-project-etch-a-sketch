@@ -1,3 +1,8 @@
+#btn {
+    display: block;
+    margin: 20px auto;
+}
+
 #container {
     border: 2px solid black;
     display: flex;
