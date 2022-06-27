@@ -31,7 +31,7 @@ function setGrid(gridSize) {
     let cellSize = 500 / gridSize;
     const divContainer = document.querySelector('#container');
     clearContainer(divContainer);
-
+    
     for (let i = 0; i < gridSize**2 ; i++) {
         const cell = document.createElement('div');
         setAttributes(cell, cellSize);
@@ -61,14 +61,14 @@ function setAttributes(element, gridSize) {
 }
 
 
-function addHighlighting(element) {
+function addHighlighting(element, q) {
     element.addEventListener('mouseover', () => {
         element.style.backgroundColor = 
-            `rgb(${ranTo255()}, ${ranTo255()}, ${ranTo255()}`;
+            `hsl(${random365()}, 100%, 50%)`;
     })
 }
 
 
-function ranTo255() {
-    return Math.floor(Math.random() * 256);
+function random365() {
+    return Math.floor(Math.random() * 366);
 }
