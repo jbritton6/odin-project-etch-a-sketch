@@ -56,13 +56,19 @@ function setAttributes(element, gridSize) {
         `border: 1px solid black;
          box-sizing: border-box;
          flex-shrink: 0;
-         height: ${gridSize};     
+         height: ${gridSize}px;     
          width: ${gridSize}px;`);
 }
 
 
 function addHighlighting(element) {
     element.addEventListener('mouseover', () => {
-        element.classList.add('hovered');
+        element.style.backgroundColor = 
+            `rgb(${ranTo255()}, ${ranTo255()}, ${ranTo255()}`;
     })
+}
+
+
+function ranTo255() {
+    return Math.floor(Math.random() * 256);
 }
