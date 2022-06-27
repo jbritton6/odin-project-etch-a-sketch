@@ -6,3 +6,7 @@
     margin: 0 auto;
     width: 500px;
 }
+
+.hovered {
+    background-color: red;
+}

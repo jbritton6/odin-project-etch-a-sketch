@@ -6,14 +6,23 @@ function setGrid(gridSize) {
 
     for (let i = 0; i < gridSize**2 ; i++) {
         let cell = document.createElement('div');
-        cell.setAttribute('style', 
-            `border: 1px solid black;
-             box-sizing: border-box;
-             flex-shrink: 0;
-             height: ${cellSize};     
-             width: ${cellSize}px;`);
-        cell.classList.add('cell');
+        setAttributes(cell, cellSize);
+        addHighlighting(cell);
         divContainer.appendChild(cell);
     }
+}
 
+function setAttributes(element, gridSize) {
+    element.setAttribute('style', 
+    `border: 1px solid black;
+     box-sizing: border-box;
+     flex-shrink: 0;
+     height: ${gridSize};     
+     width: ${gridSize}px;`);
+}
+
+function addHighlighting(element) {
+    element.addEventListener('mouseover', () => {
+        element.classList.add('hovered');
+    })
 }
